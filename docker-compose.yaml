@@ -3,9 +3,10 @@ version: '3'
 services:
   backend:
     container_name: backend
-    build: 
-      context: .
-      dockerfile: apps/docker/backend/Dockerfile
+    image: atiyadocker/django-react-backend:latest
+    # build: 
+    #   context: .
+    #   dockerfile: apps/docker/backend/Dockerfile
     ports:
       - "8000:8000"
     env_file:
@@ -25,9 +26,10 @@ services:
 
   frontend:
     container_name: frontend
-    build: 
-      context: .
-      dockerfile: apps/docker/frontend/Dockerfile
+    image: atiyadocker/django-react-frontend:latest
+    # build: 
+    #   context: .
+    #   dockerfile: apps/docker/frontend/Dockerfile
     ports:
       - "3000:3000"
     volumes:
@@ -37,9 +39,10 @@ services:
 
   nginx:
     container_name: nginx
-    build: 
-      context: .
-      dockerfile: apps/docker/nginx/Dockerfile
+    image: atiyadocker/django-react-nginx:latest
+    # build: 
+    #   context: .
+    #   dockerfile: apps/docker/nginx/Dockerfile
     ports:
       - "80:80"
     volumes:
@@ -59,4 +62,3 @@ volumes:
 
 
 
-  
