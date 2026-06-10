@@ -19,21 +19,24 @@ jobs:
       - name: Build Backend Image
         run: |
           docker build \
+          -f apps/docker/backend/Dockerfile \
           -t atiyadocker/django-react-backend:${{ github.sha }} \
           -t atiyadocker/django-react-backend:latest \
-          ./apps/docker/backend
+          .
       - name: Build Frontend Image
         run: |
           docker build \
+          -f apps/docker/frontend/Dockerfile \
           -t atiyadocker/django-react-frontend:${{ github.sha }} \
           -t atiyadocker/django-react-frontend:latest \
-          ./apps/docker/frontend
+          .
       - name: Build Nginx Image
         run: |
           docker build \
+          -f apps/docker/nginx/Dockerfile \
           -t atiyadocker/django-react-nginx:${{ github.sha }} \
           -t atiyadocker/django-react-nginx:latest \
-          ./apps/docker/nginx
+          .
       - name: push backend image
         run: |
           docker push atiyadocker/django-react-backend:${{ github.sha }}
