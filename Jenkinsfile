@@ -34,7 +34,7 @@ pipeline{
         stage("build"){
             steps{
                 script{
-                gv.build("atiyadocker/DJANGO_REACT_FRONT:${env.VERSION}" , "atiyadocker/DJANGO_REACT_BACK:${env.VERSION}","atiyadocker/DJANGO_REACT_NGINX:${env.VERSION}", "apps/docker/frontend/Dockerfile" , "apps/docker/backend/Dockerfile" , "apps/docker/nginx/Dockerfile" )
+                gv.build("atiyadocker/django_react_front:${env.VERSION}" , "atiyadocker/django_react_back:${env.VERSION}","atiyadocker/django_react_nginx:${env.VERSION}", "apps/docker/frontend/Dockerfile" , "apps/docker/backend/Dockerfile" , "apps/docker/nginx/Dockerfile" )
                 }
               
             }
@@ -42,7 +42,7 @@ pipeline{
         stage("push"){
             steps{
                 script{
-                   gv.push("atiyadocker/DJANGO_REACT_FRONT:${env.VERSION}" , "atiyadocker/DJANGO_REACT_BACK:${env.VERSION}","atiyadocker/DJANGO_REACT_NGINX:${env.VERSION}" )
+                   gv.push("atiyadocker/django_react_front:${env.VERSION}" , "atiyadocker/django_react_back:${env.VERSION}","atiyadocker/django_react_nginx:${env.VERSION}" )
                 }
             
             }
