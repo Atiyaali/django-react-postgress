@@ -16,3 +16,4 @@ sh "docker push ${frontimage}"
 sh "docker  push ${backimage}"
 sh "docker push ${nginximage}"
 }
+return this
