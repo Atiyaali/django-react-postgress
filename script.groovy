@@ -6,7 +6,7 @@ def build(frontimage , backimage , nginximage , frontpath , backpath , nginxpath
 
 def push(frontimage , backimage , nginximage){
     withCredentials([
- usernamePassword(  credentialsID: "dockerhub_creds" , usernameVariable: 'USERNAME' , passwordVariable: 'PASS')
+ usernamePassword(  credentialsId: "dockerhub_creds" , usernameVariable: 'USERNAME' , passwordVariable: 'PASS')
   
     ]){
         sh "echo ${PASS} | docker login -u ${USERNAME} --passwordstdin"
