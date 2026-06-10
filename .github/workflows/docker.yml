@@ -19,33 +19,33 @@ jobs:
       - name: Build Backend Image
         run: |
           docker build \
-          -t atiyadocker/Django-react-backend:${{ github.sha }} \
-          -t atiyadocker/Django-react-backend:latest \
+          -t atiyadocker/django-react-backend:${{ github.sha }} \
+          -t atiyadocker/django-react-backend:latest \
           ./apps/docker/backend
       - name: Build Frontend Image
         run: |
           docker build \
-          -t atiyadocker/Django-react-frontend:${{ github.sha }} \
-          -t atiyadocker/Django-react-frontend:latest \
+          -t atiyadocker/django-react-frontend:${{ github.sha }} \
+          -t atiyadocker/django-react-frontend:latest \
           ./apps/docker/frontend
       - name: Build Nginx Image
         run: |
           docker build \
-          -t atiyadocker/Django-react-nginx:${{ github.sha }} \
-          -t atiyadocker/Django-react-nginx:latest \
+          -t atiyadocker/django-react-nginx:${{ github.sha }} \
+          -t atiyadocker/django-react-nginx:latest \
           ./apps/docker/nginx
       - name: push backend image
         run: |
-          docker push atiyadocker/Django-react-backend:${{ github.sha }}
-          docker push atiyadocker/Django-react-backend:latest
+          docker push atiyadocker/django-react-backend:${{ github.sha }}
+          docker push atiyadocker/django-react-backend:latest
       - name: push frontend image
         run: |
-          docker push atiyadocker/Django-react-frontend:${{ github.sha }}
-          docker push atiyadocker/Django-react-frontend:latest
+          docker push atiyadocker/django-react-frontend:${{ github.sha }}
+          docker push atiyadocker/django-react-frontend:latest
       - name: push nginx image
         run: |
-          docker push atiyadocker/Django-react-nginx:${{ github.sha }}
-          docker push atiyadocker/Django-react-nginx:latest
+          docker push atiyadocker/django-react-nginx:${{ github.sha }}
+          docker push atiyadocker/django-react-nginx:latest
         
 
   # deploy:
