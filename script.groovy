@@ -9,7 +9,7 @@ def push(frontimage , backimage , nginximage){
  usernamePassword(  credentialsId: "dockerhub_creds" , usernameVariable: 'USERNAME' , passwordVariable: 'PASS')
   
     ]){
-        sh "echo ${PASS} | docker login -u ${USERNAME} --passwordstdin"
+        sh "echo ${PASS} | docker login -u ${USERNAME} --password-stdin"
     }
 
 sh "docker push ${frontimage}"
