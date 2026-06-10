@@ -16,4 +16,7 @@ sh "docker push ${frontimage}"
 sh "docker  push ${backimage}"
 sh "docker push ${nginximage}"
 }
+def deploy(){
+    echo "i am deploying"
+}
 return this
