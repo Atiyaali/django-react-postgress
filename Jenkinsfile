@@ -2,9 +2,9 @@
 def gv
 pipeline{
     agent any
-   enviroment{
-    DEPLOY_ENV = "production"
-   }
+  environment {
+        DEPLOY_ENV = 'production'
+    }
     stages{
         stage(init){
             steps{
