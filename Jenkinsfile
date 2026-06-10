@@ -19,9 +19,8 @@ pipeline{
                    if(DEPLOY_ENV  == "production"){
                     sh 'git fetch --tags'
                       env.VERSION = sh(
-                        script: 'git describe --tags'
+                        script: 'git describe --tags',
                         returnStdout: true
-
                       ).trim()
 
                    }
